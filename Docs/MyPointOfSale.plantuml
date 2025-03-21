@@ -1,0 +1,30 @@
+@startuml MyPointOfSaleVocabulary
+    skin rose
+    title Vocabulario
+
+    MyStore *--> "1..*" PointOfSale
+    MyStore *--> "0..*" Sale : register
+    MyStore *--> Inventory
+    MyStore *--> "1..*" Staff
+    MyStore *--> "0..*" Customer
+    MyStore *--> "0..*" Supplier
+
+
+    Inventory *--> "0..*" Product
+
+    Product o--> Supplier
+
+    PointOfSale o--> Sale : capture
+    PointOfSale --> Inventory : find-in
+    PointOfSale ..> Product
+    PointOfSale --> Staff
+    PointOfSale o--> "0..*" Customer
+
+    Sale *--> "1..*" LineOfsale
+    Sale *--> "0..*" Pay
+    Sale ..> Staff
+    Sale --> Customer
+    Sale ..> Return : maybe
+
+    LineOfsale --> Product
+@enduml

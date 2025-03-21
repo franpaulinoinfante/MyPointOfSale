@@ -9,13 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPointOfSale.Controllers",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPointOfSale.ViewModels", "MyPointOfSale.ViewModels\MyPointOfSale.ViewModels.csproj", "{E26D0A4E-8ABA-4402-85A3-D2B0B949CF20}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPointOfSale.WinFormApp", "MyPointOfSale.WinFormApp\MyPointOfSale.WinFormApp.csproj", "{237DC431-24D1-4E3F-99BC-EA9DB93F4878}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{3D26917D-E33F-4E0D-9E8B-9D9CC7C48086}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -30,5 +29,15 @@ Global
 		{E26D0A4E-8ABA-4402-85A3-D2B0B949CF20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E26D0A4E-8ABA-4402-85A3-D2B0B949CF20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E26D0A4E-8ABA-4402-85A3-D2B0B949CF20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{237DC431-24D1-4E3F-99BC-EA9DB93F4878}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{237DC431-24D1-4E3F-99BC-EA9DB93F4878}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{237DC431-24D1-4E3F-99BC-EA9DB93F4878}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{237DC431-24D1-4E3F-99BC-EA9DB93F4878}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {60E831F2-3551-4A34-B89A-BEDC40DA1809}
 	EndGlobalSection
 EndGlobal
