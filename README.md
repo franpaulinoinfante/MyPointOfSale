@@ -1,4 +1,4 @@
-# - - - - - Mastermind Practice - - - - -
+# - - - - - My Point Of Sale - - - - -
 
 **índice***
 
