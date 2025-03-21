@@ -11,7 +11,7 @@
 
 ### Modelo del Dominio
 
-
+![image](https://github.com/user-attachments/assets/49db30f2-bbd6-4256-80ce-8f8c7e2a3bd3)
 
 ### Contexto
 
