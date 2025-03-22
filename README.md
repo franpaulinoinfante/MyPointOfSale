@@ -15,18 +15,4 @@
 
 ### Contexto
 
-
-
-### Estado Inicial
-
-
-
-### Estado Final
-
-
-
-### Intrucciones generales
-
-
-
-### Actividad 
+![image](https://github.com/user-attachments/assets/c0872583-6c34-4dd1-b9d2-af76bf7349a7)
