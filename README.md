@@ -48,6 +48,4 @@ FOTO AQUI
 
 
 
-### Vsita de Caso de Uso Resume
-
-
+### Vsita de Caso de Uso 
