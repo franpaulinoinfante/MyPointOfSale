@@ -1,0 +1,37 @@
+@startuml  GeneralWorkflow
+    title  General Workflow
+
+state A as " "
+state B as " "
+state C as " "
+
+state haveAllProductsBeenAdded <<choice>>
+state isClosingOfCashRegister <<choice>>
+
+[*] --> OPENED
+    OPENED --> OCISSOUS : login
+    OCISSOUS --> CASH_REGISTER_OPENED : open shift
+    CASH_REGISTER_OPENED --> isClosingOfCashRegister : isClosingOfCashRegister
+    isClosingOfCashRegister --> A : no
+        A --> NEW_SALE_OPENED : requests to register new sale
+        CASH_REGISTER_OPENED --> NEW_SALE_OPENED : requests to register new sale
+        NEW_SALE_OPENED --> ADDED_PRODUCT : add new product
+        ADDED_PRODUCT --> haveAllProductsBeenAdded : [haveAllProductsBeenAdded]
+        haveAllProductsBeenAdded --> C : yes
+            C --> PAYMENT_requestsED : requests to process payment
+            PAYMENT_requestsED --> PAYMENT_METHOD_requestsED : requests payment method
+                note on link
+                    Efectivo: El cajero ingresa la cantidad recibida y el sistema calcula el cambio.
+                    Tarjeta: El cajero procesa el pago mediante una terminal POS
+                    Transferencia: El cajero ingresa el comprobante de pago.
+                endnote            
+            PAYMENT_METHOD_requestsED --> REGISTED_PAYMENT : requests register payment
+            REGISTED_PAYMENT --> CONFIRMED_PAYMENT : confirm payment
+            CONFIRMED_PAYMENT --> SALE_COMPLETED : requests to please sale
+            SALE_COMPLETED --> PRINTED_INVOCE : requests to print invoce
+            PRINTED_INVOCE --> SALE_CLOSED
+            SALE_CLOSED -up-> CASH_REGISTER_OPENED
+    isClosingOfCashRegister --> B : yes
+        B --> CASH_REGISTER_CLOSED : requestss to close cash register
+        CASH_REGISTER_CLOSED --> [*]
+@enduml

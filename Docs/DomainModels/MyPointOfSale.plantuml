@@ -8,6 +8,7 @@
     MyStore *--> "1..*" Staff
     MyStore *--> "0..*" Customer
     MyStore *--> "0..*" Supplier
+    MyStore *--> "0..*" NCF
 
 
     Inventory *--> "0..*" Product
@@ -25,6 +26,7 @@
     Sale ..> Staff
     Sale --> Customer
     Sale ..> Return : maybe
+    Sale --> NCF
 
     LineOfsale --> Product
 @enduml
