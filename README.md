@@ -1,4 +1,4 @@
-# - - - - - My Point Of Sale - - - - -
+![image](https://github.com/user-attachments/assets/1d5cacdf-cd57-4af5-91be-d6c7cd82ba9d)# - - - - - My Point Of Sale - - - - -
 
 **índice***
 
@@ -13,7 +13,7 @@
 
 ### Modelo del Dominio
 
-![image](https://github.com/user-attachments/assets/49db30f2-bbd6-4256-80ce-8f8c7e2a3bd3)
+![image](https://github.com/user-attachments/assets/6460b831-5263-4d7f-85b0-e1e79358c4fb)
 
 ### Contexto
 
