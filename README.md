@@ -1,6 +1,6 @@
-![image](https://github.com/user-attachments/assets/1d5cacdf-cd57-4af5-91be-d6c7cd82ba9d)# - - - - - My Point Of Sale - - - - -
+** - - - - - My Point Of Sale - - - - - **
 
-**índice***
+**índice**
 
 1. [Modelo del Dominio](#Modelo-del-Dominio)
 - 1.1 [Contexto](#Contexto)
