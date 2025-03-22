@@ -2,14 +2,14 @@
 
 **índice**
 
-1. [Modelo del Dominio](#Modelo-del-Dominio) 
+- [Modelo del Dominio](#Modelo-del-Dominio) 
   - [Contexto](#Contexto)
   - [Estado Inicial](#Estado-Inicial)
   - [Estado Final](#Estado-Final)
   - [Intrucciones generales](#Intrucciones-generales)
   - [Actividad Proposed Combination](#ActividadProposedCombination)
-2. [Requisitos](#Requisitos)
-3. [RegisterNewSale](#RegisterNewSale)
+- [Requisitos](#Requisitos)
+- [RegisterNewSale](#RegisterNewSale)
 
 ### Modelo del Dominio
 
