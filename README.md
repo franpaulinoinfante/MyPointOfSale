@@ -1,7 +1,6 @@
 # - - - - - My Point Of Sale - - - - - 
 
-**índice**
-
+*índice*
 - [Modelo del Dominio](#Modelo-del-Dominio) 
   - [Contexto](#Contexto)
   - [Estado Inicial](#Estado-Inicial)
