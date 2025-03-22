@@ -20,8 +20,7 @@
 
 ### Requisitos
 
-| * _Funcionalidad:  | 
-    **Gestión de Productos (Catalogue y Inventory)**_<br/>  **Gestión de Ventas (PointOfSale y Sale)**_<br/>  **Gestión de Clientes (Customer)**_<br/>  **Gestión de Proveedores (Supplier)**_<br/>  **Gestión de Personal (Staff)**_<br/>  **Integraciones y Escalabilidad**_<br/>  **Experiencia del Usuario (UX)**_<br/>  **Mantenimiento y Soporte**_<br/>  * _Interfaz: **WinformApp**_<br/>  * _Distribución: **Standalone**_<br/>  * _Persistencia: **Si**_<br/> | FOTO AQUI | 
+| * _Funcionalidad: **Gestión de Productos (Catalogue y Inventory)**_<br/>  **Gestión de Ventas (PointOfSale y Sale)**_<br/>  **Gestión de Clientes (Customer)**_<br/>  **Gestión de Proveedores (Supplier)**_<br/>  **Gestión de Personal (Staff)**_<br/>  **Integraciones y Escalabilidad**_<br/>  **Experiencia del Usuario (UX)**_<br/>  **Mantenimiento y Soporte**_<br/>  * _Interfaz: **WinformApp**_<br/>  * _Distribución: **Standalone**_<br/>  * _Persistencia: **Si**_<br/> | FOTO AQUI | 
 | :------- | :------: |  
 
 ### Vista de Casos de Uso
