@@ -1,4 +1,4 @@
-** - - - - - My Point Of Sale - - - - - **
+# - - - - - My Point Of Sale - - - - - 
 
 **índice**
 
