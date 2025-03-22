@@ -20,7 +20,7 @@
 
 ### Requisitos
 
-| _Funcionalidad: _<br/>  
+| _Funcionalidad: _<br/>  |
     **Gestión de Productos (Catalogue y Inventory)**_<br/>  
     **Gestión de Ventas (PointOfSale y Sale)**_<br/>  
     **Gestión de Clientes (Customer)**_<br/>  
