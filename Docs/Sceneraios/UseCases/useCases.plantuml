@@ -1,0 +1,11 @@
+@startuml useCases
+    left to right direction
+    
+    title Use Cases
+
+    actor cashier
+
+    usecase RegisterNewSale
+
+    cashier --> RegisterNewSale
+@enduml

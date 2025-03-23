@@ -1,0 +1,48 @@
+@startuml RegisterNewSaleSpecification
+    title Register NewSale Specification
+
+state A as " "
+state B as " "
+state C as " "
+state D as " "
+state E as " "
+state F as " "
+state H as " "
+state I as " "
+state J as " "
+state G as " "
+
+state haveAllProductAdded <<choice>>
+state option <<choice>>
+state isCash <<choice>>
+state exists <<choice>>
+
+[*] --> DASHBOARD_OPENED
+    DASHBOARD_OPENED --> A : cajero solicita RegisterNewSale
+        A --> B : sistema le permite seleccionar una nueva linea de producto
+        B --> C : cajero selecciona el producto
+            note on link
+                - Escaneo de código de barras
+                - Búsqueda Manual (nombre, categoría o SKU)
+                - Desde el catálogo
+            endnote
+        C --> exists : [producto existe?]
+            exists --> D : yes
+            D --> option: el sistema visualiza el nombre del producto\nprecio unitario\ncantidad disponible y\n le permite introducir la cantidad o\nseleccionar otro producto
+                option --> E : el cajero introduce la cantidad
+                    E --> haveAllProductAdded : [todos los productos han sido agregado?]
+                    haveAllProductAdded --> F : yes\nEl sistema le permite seleccionar un método de pago
+                    F --> H : cajero selecciona el método de pago
+                        note on link
+                            - Efectivo
+                            - Tarjetas crédito/débito
+                            - Transferencia electrónicas
+                        endnote
+                    H --> isCash : [pago en efectivo]
+                        isCash --> I : yes\ncajero introduce la cantidad en efectivo
+                        I --> J : el sistema visualiza la cantidad a devolver y permite solicitar pagar
+                        J --> G : el cajero selecciona pagar y solicita terminar la venta
+                        G --> [*] : el sistema visualiza mensaje de venta existosa
+                haveAllProductAdded -up-> A : no
+        option -up-> A : el cajero seleccionar otro producto
+@enduml
