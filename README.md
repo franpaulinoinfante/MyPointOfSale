@@ -32,7 +32,8 @@
 
 ### Vsita de Caso de Uso RegisterNewSale
 
-FOTO AQUI
+![image](https://github.com/user-attachments/assets/30e93a81-c036-476c-aa05-553a08a2a940)
+
 
 ### Vsita de Caso de Uso 
 
