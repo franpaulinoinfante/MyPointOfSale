@@ -3,12 +3,9 @@
 ## índice
 - [Modelo del Dominio](#Modelo-del-Dominio) 
   - [Contexto](#Contexto)
-  - [Estado Inicial](#Estado-Inicial)
-  - [Estado Final](#Estado-Final)
-  - [Intrucciones generales](#Intrucciones-generales)
-  - [Actividad Proposed Combination](#ActividadProposedCombination)
 - [Requisitos](#Requisitos)
-- [RegisterNewSale](#RegisterNewSale)
+- [Vsita de Caso de Uso RegisterNewSale](#Vsita-de-Caso-de-Uso-RegisterNewSale)
+- [Vsita de Caso de Uso FindProduct](#Vsita-de-Caso-de-Uso-FindProduct)
 
 ### Modelo del Dominio
 
@@ -32,10 +29,12 @@
 
 ### Vsita de Caso de Uso RegisterNewSale
 
-![image](https://github.com/user-attachments/assets/30e93a81-c036-476c-aa05-553a08a2a940)
+![image](https://github.com/user-attachments/assets/1937317d-12e0-4a12-9523-e2a8f914b1db)
 
+### Vsita de Caso de Uso FindProduct
 
-### Vsita de Caso de Uso 
+![image](https://github.com/user-attachments/assets/11ad543e-31e8-44aa-9ffd-dec68bc68539)
+
 
 
 
