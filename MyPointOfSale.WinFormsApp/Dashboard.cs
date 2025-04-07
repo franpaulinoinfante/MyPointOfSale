@@ -17,9 +17,29 @@ namespace MyPointOfSale
             InitializeComponent();
         }
 
-        private void pictureBox8_Click(object sender, EventArgs e)
+        private void Dashboard_Load(object sender, EventArgs e)
         {
+            LoadUserData();
+        }
 
+        private void LoadUserData()
+        {
+            lblUserName.Text = $"{Common.Cache.UserLoginCache.FirstName} {Common.Cache.UserLoginCache.LastName}";
+            lblPosition.Text = Common.Cache.UserLoginCache.Position;
+            lblUserEmail.Text = Common.Cache.UserLoginCache.Email;
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Estas seguro que desea cerrar sección?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

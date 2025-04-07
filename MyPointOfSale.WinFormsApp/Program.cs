@@ -1,3 +1,5 @@
+using MyPointOfSale.Controllers;
+
 namespace MyPointOfSale.WinFormsApp
 {
     internal static class Program
@@ -11,7 +13,10 @@ namespace MyPointOfSale.WinFormsApp
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Login());
+
+            UserController user = new UserController();
+
+            Application.Run(new Login(user));
         }
     }
 }
