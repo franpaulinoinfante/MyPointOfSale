@@ -9,7 +9,7 @@ namespace MyPointOfSale.DataAccessSQLServer
 
         public ConnectionToSQLServer()
         {
-            _connectionString = ConfigurationManager.ConnectionStrings["DefaulConnection"].ToString();
+            _connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString();
         }
 
         protected SqlConnection ConnectionString => new SqlConnection(_connectionString);
