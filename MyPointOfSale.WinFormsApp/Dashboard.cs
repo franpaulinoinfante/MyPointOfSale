@@ -21,7 +21,7 @@ public partial class Dashboard : Form
 
     private void LoadProducts()
     {
-        dataGridView1.DataSource = _productController.GetProducts();
+        //dataGridView1.DataSource = _productController.GetProducts();
     }
 
     private void LoadUserData()

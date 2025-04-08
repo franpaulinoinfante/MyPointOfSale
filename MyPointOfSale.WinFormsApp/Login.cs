@@ -23,12 +23,12 @@ public partial class Login : Form
 
         try
         {
-            bool isValidLogin = _userController.Login(new UserViewModel()
+          /* bool isValidLogin = _userController.Login(new UserViewModel()
             {
                 Username = txtUsername.Text,
                 Password = txtPassword.Text
             });
-
+ 
             if (isValidLogin)
             {
                 Dashboard dashboard = new Dashboard();
@@ -39,7 +39,7 @@ public partial class Login : Form
             else
             {
                 MessageBox.Show("Usuario o contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            } */
         }
         catch (ArgumentException ex)
         {
