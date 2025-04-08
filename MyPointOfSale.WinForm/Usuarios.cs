@@ -30,7 +30,7 @@ namespace MyPointOfSale.WinForm
         {
             UsuarioCreateViewModel usuario = new UsuarioCreateViewModel();
             usuario.FirstName = txtFirstName.Text;
-            //usuario.Position = txtPosition.Text;(PARA CAMBIAR)
+            //usuario.Position = txtPosition.Text;(PARA CAMBIA
             usuario.LastName = txtLastName.Text;
             usuario.Username = txtUsuario.Text;
             usuario.Email = txtEmail.Text;
