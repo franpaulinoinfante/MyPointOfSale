@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MyPointOfSale.ViewModels
 {
-    public class UsuarioViewModel
+    public class UsuarioCreateViewModel
     {
         public string Username { get; set; }
         public string Password { get; set; }
@@ -15,6 +15,7 @@ namespace MyPointOfSale.ViewModels
         public string LastName { get; set; }
         public string Email { get; set; }
         public int DocumentTypeId { get; set; }
+        public int Position { get; set; }
         public string DocumentNumber { get; set; }
     }
 }
