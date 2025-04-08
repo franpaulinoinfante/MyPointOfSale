@@ -15,6 +15,11 @@ namespace MyPointOfSale.Controllers
             _userDao = new UserDao();
         }
 
+        public UserController(UserDao userDao)
+        {
+            _userDao = userDao;
+        }
+
         public IReadOnlyList<UserViewModel> GetUsers()
         {
             List<UserViewModel> users = new List<UserViewModel>();
@@ -63,6 +68,25 @@ namespace MyPointOfSale.Controllers
             return documentTypes.AsReadOnly();
         }
 
+        public bool Login(UserLoginViewModel userViewModel)
+        {
+            if (string.IsNullOrEmpty(userViewModel.Username) || string.IsNullOrEmpty(userViewModel.Password))
+            {
+                throw new ArgumentException("Usuario y contraseña son obligatorios");
+            }
+            // Here you would typically call a method from your data access layer
+            // to check the credentials against a database.
+            // For example:
+            // return userDao.Login(new User { Username = username, Password = password });
+            // For the sake of this example, let's assume the login is always successful.
+
+            return _userDao.Login(new User
+            {
+                Username = userViewModel.Username,
+                Password = userViewModel.Password
+            });
+        }
+
         public void CrearUsuario(UsuarioCreateViewModel usuario)
         {
             if (usuario == null)
@@ -92,23 +116,43 @@ namespace MyPointOfSale.Controllers
 
         }
 
-        public bool Login(UserLoginViewModel userViewModel)
+        public void ActualizarUsuario(UsuarioUpdatedViewModel usuario)
         {
-            if (string.IsNullOrEmpty(userViewModel.Username) || string.IsNullOrEmpty(userViewModel.Password))
+            if (usuario == null)
             {
-                throw new ArgumentException("Usuario y contraseña son obligatorios");
+                throw new ArgumentNullException(nameof(usuario), "El usuario no puede ser nulo");
             }
-            // Here you would typically call a method from your data access layer
-            // to check the credentials against a database.
-            // For example:
-            // return userDao.Login(new User { Username = username, Password = password });
-            // For the sake of this example, let's assume the login is always successful.
 
-            return _userDao.Login(new User
+            User user = new User()
             {
-                Username = userViewModel.Username,
-                Password = userViewModel.Password
-            });
+                UserId = usuario.UserId,
+                Username = usuario.Username,
+                Password = usuario.Password,
+                Email = usuario.Email,
+                FirstName = usuario.FirstName,
+                LastName = usuario.LastName,
+                Position = new Position()
+                {
+                    PositionId = usuario.PositionId
+                },
+                DocumentType = new DocumentType()
+                {
+                    DocumentID = usuario.DocumentTypeId
+                },
+                DocumentNumber = usuario.DocumentNumber
+            };
+
+            _userDao.ActualizarUsuario(user);
+        }
+
+        public void EliminarUsuario(int id)
+        {
+            if (id <= 0)
+            {
+                throw new ArgumentException("El ID del usuario debe ser mayor que cero", nameof(id));
+            }
+
+            _userDao.EliminarUsuario(id);
         }
     }
 }

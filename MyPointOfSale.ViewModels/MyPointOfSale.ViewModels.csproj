@@ -48,6 +48,7 @@
     <Compile Include="UserLoginViewModel.cs" />
     <Compile Include="UserViewModel.cs" />
     <Compile Include="UsuarioCreateViewModel.cs" />
+    <Compile Include="UsuarioUpdatedViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyPointOfSale.Models\MyPointOfSale.Models.csproj">

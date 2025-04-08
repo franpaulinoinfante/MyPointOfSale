@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPointOfSale.WinFormsApp", "MyPointOfSale.WinFormsApp\MyPointOfSale.WinFormsApp.csproj", "{C1D303EA-01CD-44B0-95DA-913E13565F27}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPointOfSale.Models", "MyPointOfSale.Models\MyPointOfSale.Models.csproj", "{EEFB9CDF-02A4-452D-A062-A21B177E9F00}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPointOfSale.DataAccessSQLServer", "MyPointOfSale.DataAccessSQLServer\MyPointOfSale.DataAccessSQLServer.csproj", "{2DAA7AC6-22A5-4E74-BEA2-7075CEE5C112}"
@@ -17,16 +15,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPointOfSale.Common", "MyP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPointOfSale.WinForm", "MyPointOfSale.WinForm\MyPointOfSale.WinForm.csproj", "{A2DAFD23-C73B-4149-8588-29AE6D3A5C77}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPointOfSale.Tests.Models", "MyPointOfSale.Tests.Models\MyPointOfSale.Tests.Models.csproj", "{CFFEE6BB-BCF4-4573-A8E1-E18692973353}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C1D303EA-01CD-44B0-95DA-913E13565F27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C1D303EA-01CD-44B0-95DA-913E13565F27}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C1D303EA-01CD-44B0-95DA-913E13565F27}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C1D303EA-01CD-44B0-95DA-913E13565F27}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EEFB9CDF-02A4-452D-A062-A21B177E9F00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EEFB9CDF-02A4-452D-A062-A21B177E9F00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEFB9CDF-02A4-452D-A062-A21B177E9F00}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,6 +47,10 @@ Global
 		{A2DAFD23-C73B-4149-8588-29AE6D3A5C77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2DAFD23-C73B-4149-8588-29AE6D3A5C77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2DAFD23-C73B-4149-8588-29AE6D3A5C77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFFEE6BB-BCF4-4573-A8E1-E18692973353}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFFEE6BB-BCF4-4573-A8E1-E18692973353}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFFEE6BB-BCF4-4573-A8E1-E18692973353}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFFEE6BB-BCF4-4573-A8E1-E18692973353}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

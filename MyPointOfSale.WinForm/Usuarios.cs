@@ -89,5 +89,51 @@ namespace MyPointOfSale.WinForm
                 LoadUsers();
             }
         }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UsuarioUpdatedViewModel usuario = new UsuarioUpdatedViewModel
+                {
+                    UserId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value),
+                    Username = txtUsuario.Text,
+                    Password = txtPassword.Text,
+                    FirstName = txtFirstName.Text,
+                    LastName = txtLastName.Text,
+                    Email = txtEmail.Text,
+                    DocumentTypeId = cbbDocumentId.SelectedIndex + 1,
+                    DocumentNumber = txtDocumentNumber.Text,
+                    PositionId = cbbPosition.SelectedIndex + 1
+                };
+
+                _userController.ActualizarUsuario(usuario);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar el usuario: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                LoadUsers();
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int userId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+                _userController.EliminarUsuario(userId);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar el usuario: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                LoadUsers();
+            }
+        }
     }
 }

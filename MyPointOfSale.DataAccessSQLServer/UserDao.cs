@@ -144,6 +144,44 @@ namespace MyPointOfSale.DataAccessSQLServer
                 }
             }
         }
+
+        public void ActualizarUsuario(User user)
+        {
+            using (SqlConnection conn = ConnectionString)
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "UPDATE [dbo].[Users] SET [Username] = @Username, [Password] = @Password, [FirstName] = @FirstName, [LastName] = @LastName, [Email] = @Email, [DocumentId] = @DocumentId, [DocumentNumber] = @DocumentNumber, [PositionId] = @PositionId WHERE UserId = @UserId";
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.AddWithValue("@UserId", user.UserId);
+                    cmd.Parameters.AddWithValue("@Username", user.Username);
+                    cmd.Parameters.AddWithValue("@Password", user.Password);
+                    cmd.Parameters.AddWithValue("@FirstName", user.FirstName);
+                    cmd.Parameters.AddWithValue("@LastName", user.LastName);
+                    cmd.Parameters.AddWithValue("@Email", user.Email);
+                    cmd.Parameters.AddWithValue("@DocumentId", user.DocumentType.DocumentID);
+                    cmd.Parameters.AddWithValue("@DocumentNumber", user.DocumentNumber);
+                    cmd.Parameters.AddWithValue("@PositionId", user.Position.PositionId);
+                    int rowAffected = cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public void EliminarUsuario(int id)
+        {
+            using (SqlConnection conn = ConnectionString)
+            {
+                conn.Open();
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "DELETE FROM [dbo].[Users] WHERE UserId = @UserId";
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.AddWithValue("@UserId", id);
+                    int rowAffected = cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }
 
