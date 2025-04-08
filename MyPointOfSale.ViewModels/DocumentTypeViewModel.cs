@@ -1,6 +1,6 @@
-﻿namespace MyPointOfSale.Models
+﻿namespace MyPointOfSale.ViewModels
 {
-    public class DocumentType
+    public class DocumentTypeViewModel
     {
         public int DocumentID { get; set; }
         public string DocumentName { get; set; }

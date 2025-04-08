@@ -1,5 +1,4 @@
 ﻿using MyPointOfSale.Models;
-using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 
@@ -15,7 +14,7 @@ namespace MyPointOfSale.DataAccessSQLServer
                 connection.Open();
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = 
+                    command.CommandText =
                         @"SELECT ProductId, Categories.Name, Description, Price, ITBIS 
                           FROM Products 
                           LEFT JOIN Categories ON Products.CategoryId = categories.CategoryId";

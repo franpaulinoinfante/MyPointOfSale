@@ -1,5 +1,4 @@
 ﻿using MyPointOfSale.Controllers;
-using MyPointOfSale.ViewModels;
 
 namespace MyPointOfSale;
 
@@ -23,23 +22,23 @@ public partial class Login : Form
 
         try
         {
-          /* bool isValidLogin = _userController.Login(new UserViewModel()
-            {
-                Username = txtUsername.Text,
-                Password = txtPassword.Text
-            });
- 
-            if (isValidLogin)
-            {
-                Dashboard dashboard = new Dashboard();
-                dashboard.Show();
-                dashboard.FormClosed += LogOut;
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Usuario o contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            } */
+            /* bool isValidLogin = _userController.Login(new UserViewModel()
+              {
+                  Username = txtUsername.Text,
+                  Password = txtPassword.Text
+              });
+
+              if (isValidLogin)
+              {
+                  Dashboard dashboard = new Dashboard();
+                  dashboard.Show();
+                  dashboard.FormClosed += LogOut;
+                  this.Hide();
+              }
+              else
+              {
+                  MessageBox.Show("Usuario o contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+              } */
         }
         catch (ArgumentException ex)
         {

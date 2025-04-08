@@ -2,6 +2,7 @@
 using MyPointOfSale.Models;
 using MyPointOfSale.ViewModels;
 using System;
+using System.Collections.Generic;
 
 namespace MyPointOfSale.Controllers
 {
@@ -14,24 +15,84 @@ namespace MyPointOfSale.Controllers
             _userDao = new UserDao();
         }
 
+        public IReadOnlyList<UserViewModel> GetUsers()
+        {
+            List<UserViewModel> users = new List<UserViewModel>();
+            foreach (User user in _userDao.GetUsers())
+            {
+                users.Add(new UserViewModel()
+                {
+                    UserId = user.UserId,
+                    PositionName = user.Position.PositionName,
+                    FirstName = user.FirstName,
+                    LastName = user.LastName,
+                    DocumentName = user.DocumentType.DocumentName,
+                    DocumentNumber = user.DocumentNumber,
+                    Email = user.Email
+                });
+            }
+            return users.AsReadOnly();
+        }
+
+        public IReadOnlyList<PositionsViewModel> GetPositions()
+        {
+            List<PositionsViewModel> positions = new List<PositionsViewModel>();
+            foreach (Position position in _userDao.GetPositions())
+            {
+                positions.Add(new PositionsViewModel()
+                {
+                    PositionId = position.PositionId,
+                    PositionName = position.PositionName
+                });
+            }
+            return positions.AsReadOnly();
+        }
+
+        public IReadOnlyList<DocumentTypeViewModel> GetDocumentTypes()
+        {
+            List<DocumentTypeViewModel> documentTypes = new List<DocumentTypeViewModel>();
+            foreach (DocumentType documentType in new DocumentDao().GetDocuments())
+            {
+                documentTypes.Add(new DocumentTypeViewModel()
+                {
+                    DocumentID = documentType.DocumentID,
+                    DocumentName = documentType.DocumentName
+                });
+            }
+
+            return documentTypes.AsReadOnly();
+        }
+
         public void CrearUsuario(UsuarioCreateViewModel usuario)
         {
-           User user = new User();
-            user.Username = usuario.Username;
-            user.Password = usuario.Password;
-            user.Email = usuario.Email;
-            user.FirstName = usuario.FirstName;
-            user.LastName = usuario.LastName;
-            user.DocumentNumber = usuario.DocumentNumber;
-            user.DocumentType = new DocumentType()
+            if (usuario == null)
             {
-                DocumentID = usuario.DocumentTypeId
+                throw new ArgumentNullException(nameof(usuario), "El usuario no puede ser nulo");
+            }
+
+            User user = new User()
+            {
+                Username = usuario.Username,
+                Password = usuario.Password,
+                Email = usuario.Email,
+                FirstName = usuario.FirstName,
+                LastName = usuario.LastName,
+                Position = new Position()
+                {
+                    PositionId = usuario.PositionId
+                },
+                DocumentType = new DocumentType()
+                {
+                    DocumentID = usuario.DocumentTypeId
+                },
+                DocumentNumber = usuario.DocumentNumber
             };
+
             _userDao.CrearUsuario(user);
 
         }
 
-        public bool Login(UserViewModel userViewModel)
+        public bool Login(UserLoginViewModel userViewModel)
         {
             if (string.IsNullOrEmpty(userViewModel.Username) || string.IsNullOrEmpty(userViewModel.Password))
             {

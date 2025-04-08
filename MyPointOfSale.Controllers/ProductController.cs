@@ -7,12 +7,18 @@ namespace MyPointOfSale.Controllers
 {
     public class ProductController
     {
+        readonly ProductDao productDao;
+
+        public ProductController()
+        {
+            productDao = new ProductDao();
+        }
+
         public IReadOnlyList<ProductViewModel> GetProducts()
         {
-            ProductDao productDao = new ProductDao();
 
             List<ProductViewModel> productViewModels = new List<ProductViewModel>();
-            foreach (var product in productDao.GetProducts())
+            foreach (Product product in productDao.GetProducts())
             {
                 productViewModels.Add(new ProductViewModel()
                 {

@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="ClientDao.cs" />
     <Compile Include="ConnectionToSQLServer.cs" />
+    <Compile Include="DocumentDao.cs" />
     <Compile Include="InvoiceDao.cs" />
     <Compile Include="ProductDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

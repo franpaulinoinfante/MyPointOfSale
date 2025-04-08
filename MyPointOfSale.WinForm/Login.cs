@@ -1,9 +1,9 @@
 ﻿using MyPointOfSale.Controllers;
 using MyPointOfSale.ViewModels;
 using MyPointOfSale.WinForm;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
-using System;
 
 namespace MyPointOfSale
 {
@@ -28,7 +28,7 @@ namespace MyPointOfSale
 
             try
             {
-                bool isValidLogin = _userController.Login(new UserViewModel()
+                bool isValidLogin = _userController.Login(new UserLoginViewModel()
                 {
                     Username = txtUsername.Text,
                     Password = txtPassword.Text
@@ -138,6 +138,5 @@ namespace MyPointOfSale
             txtPassword.PasswordChar = '\0';
         }
     }
-
 
 }

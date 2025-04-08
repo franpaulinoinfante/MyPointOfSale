@@ -34,7 +34,6 @@
             this.btnCrear = new System.Windows.Forms.Button();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
-            this.txtPosition = new System.Windows.Forms.TextBox();
             this.txtUserId = new System.Windows.Forms.TextBox();
             this.cbbDocumentId = new System.Windows.Forms.ComboBox();
             this.catlbl = new System.Windows.Forms.Label();
@@ -52,6 +51,7 @@
             this.txtDocumentNumber = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.Username = new System.Windows.Forms.Label();
+            this.cbbPosition = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +63,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(569, 331);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(210, 34);
-            this.btnCancelar.TabIndex = 36;
+            this.btnCancelar.TabIndex = 11;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             // 
@@ -75,7 +75,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(360, 331);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(159, 34);
-            this.btnEliminar.TabIndex = 35;
+            this.btnEliminar.TabIndex = 10;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             // 
@@ -87,7 +87,7 @@
             this.btnActualizar.Location = new System.Drawing.Point(195, 331);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(159, 34);
-            this.btnActualizar.TabIndex = 34;
+            this.btnActualizar.TabIndex = 9;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
             // 
@@ -99,7 +99,7 @@
             this.btnCrear.Location = new System.Drawing.Point(30, 331);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(159, 34);
-            this.btnCrear.TabIndex = 33;
+            this.btnCrear.TabIndex = 8;
             this.btnCrear.Text = "Crear";
             this.btnCrear.UseVisualStyleBackColor = false;
             this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
@@ -110,7 +110,9 @@
             this.txtFirstName.Location = new System.Drawing.Point(136, 215);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(210, 32);
-            this.txtFirstName.TabIndex = 32;
+            this.txtFirstName.TabIndex = 2;
+            this.txtFirstName.Tag = "";
+            this.txtFirstName.Text = "nombreTest";
             // 
             // txtLastName
             // 
@@ -118,15 +120,9 @@
             this.txtLastName.Location = new System.Drawing.Point(136, 265);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(210, 32);
-            this.txtLastName.TabIndex = 31;
-            // 
-            // txtPosition
-            // 
-            this.txtPosition.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.txtPosition.Location = new System.Drawing.Point(569, 111);
-            this.txtPosition.Name = "txtPosition";
-            this.txtPosition.Size = new System.Drawing.Size(210, 32);
-            this.txtPosition.TabIndex = 30;
+            this.txtLastName.TabIndex = 3;
+            this.txtLastName.Tag = "";
+            this.txtLastName.Text = "apellidoTest";
             // 
             // txtUserId
             // 
@@ -143,7 +139,7 @@
             this.cbbDocumentId.Location = new System.Drawing.Point(569, 215);
             this.cbbDocumentId.Name = "cbbDocumentId";
             this.cbbDocumentId.Size = new System.Drawing.Size(210, 33);
-            this.cbbDocumentId.TabIndex = 28;
+            this.cbbDocumentId.TabIndex = 6;
             // 
             // catlbl
             // 
@@ -207,7 +203,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 386);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(804, 249);
-            this.dataGridView1.TabIndex = 22;
+            this.dataGridView1.TabIndex = 12;
             // 
             // label1
             // 
@@ -228,7 +224,8 @@
             this.txtPassword.Location = new System.Drawing.Point(136, 165);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(210, 32);
-            this.txtPassword.TabIndex = 37;
+            this.txtPassword.TabIndex = 1;
+            this.txtPassword.Text = "contraseñaTest";
             // 
             // label2
             // 
@@ -248,9 +245,9 @@
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label3.Location = new System.Drawing.Point(403, 218);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(133, 25);
+            this.label3.Size = new System.Drawing.Size(110, 25);
             this.label3.TabIndex = 39;
-            this.label3.Text = "ID Documento";
+            this.label3.Text = "Documento";
             // 
             // label4
             // 
@@ -269,7 +266,8 @@
             this.txtEmail.Location = new System.Drawing.Point(569, 165);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(210, 32);
-            this.txtEmail.TabIndex = 41;
+            this.txtEmail.TabIndex = 5;
+            this.txtEmail.Text = "emailTest@test.com";
             // 
             // txtDocumentNumber
             // 
@@ -277,7 +275,8 @@
             this.txtDocumentNumber.Location = new System.Drawing.Point(569, 266);
             this.txtDocumentNumber.Name = "txtDocumentNumber";
             this.txtDocumentNumber.Size = new System.Drawing.Size(210, 32);
-            this.txtDocumentNumber.TabIndex = 42;
+            this.txtDocumentNumber.TabIndex = 7;
+            this.txtDocumentNumber.Text = "047-8955325-5";
             // 
             // txtUsuario
             // 
@@ -285,7 +284,8 @@
             this.txtUsuario.Location = new System.Drawing.Point(136, 114);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(210, 32);
-            this.txtUsuario.TabIndex = 44;
+            this.txtUsuario.TabIndex = 0;
+            this.txtUsuario.Text = "usuarioTest";
             // 
             // Username
             // 
@@ -298,12 +298,22 @@
             this.Username.TabIndex = 43;
             this.Username.Text = "Usuario";
             // 
+            // cbbPosition
+            // 
+            this.cbbPosition.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.cbbPosition.FormattingEnabled = true;
+            this.cbbPosition.Location = new System.Drawing.Point(569, 111);
+            this.cbbPosition.Name = "cbbPosition";
+            this.cbbPosition.Size = new System.Drawing.Size(210, 33);
+            this.cbbPosition.TabIndex = 4;
+            // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(68)))), ((int)(((byte)(108)))));
             this.ClientSize = new System.Drawing.Size(804, 635);
+            this.Controls.Add(this.cbbPosition);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.Username);
             this.Controls.Add(this.txtDocumentNumber);
@@ -318,7 +328,6 @@
             this.Controls.Add(this.btnCrear);
             this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.txtLastName);
-            this.Controls.Add(this.txtPosition);
             this.Controls.Add(this.txtUserId);
             this.Controls.Add(this.cbbDocumentId);
             this.Controls.Add(this.catlbl);
@@ -330,6 +339,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmUsuarios";
             this.Text = "Usuarios";
+            this.Load += new System.EventHandler(this.frmUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -344,7 +354,6 @@
         private System.Windows.Forms.Button btnCrear;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.TextBox txtLastName;
-        private System.Windows.Forms.TextBox txtPosition;
         private System.Windows.Forms.TextBox txtUserId;
         private System.Windows.Forms.ComboBox cbbDocumentId;
         private System.Windows.Forms.Label catlbl;
@@ -362,5 +371,6 @@
         private System.Windows.Forms.TextBox txtDocumentNumber;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label Username;
+        private System.Windows.Forms.ComboBox cbbPosition;
     }
 }

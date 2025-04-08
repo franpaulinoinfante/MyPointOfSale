@@ -10,5 +10,6 @@
         public string Email { get; set; }
         public DocumentType DocumentType { get; set; }
         public string DocumentNumber { get; set; }
+        public Position Position { get; set; }
     }
 }

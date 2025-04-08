@@ -173,6 +173,7 @@ namespace MyPointOfSale.WinForm
             this.productos.TabIndex = 20;
             this.productos.TabStop = true;
             this.productos.Text = "Productos";
+            this.productos.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.productos_LinkClicked);
             // 
             // documentos
             // 

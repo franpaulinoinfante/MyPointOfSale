@@ -3,7 +3,7 @@ using MyPointOfSale.Controllers;
 using System;
 using System.Windows.Forms;
 
-namespace MyPointOfSale.WinForm 
+namespace MyPointOfSale.WinForm
 {
     public partial class Dashboard : Form
     {
@@ -53,6 +53,11 @@ namespace MyPointOfSale.WinForm
         {
             frmUsuarios usuarios = new frmUsuarios(_userController);
             usuarios.Show();
+        }
+
+        private void productos_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
         }
     }
 

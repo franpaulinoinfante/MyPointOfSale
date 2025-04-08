@@ -1,8 +1,5 @@
 ﻿using MyPointOfSale.Controllers;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MyPointOfSale.WinForm
@@ -17,7 +14,6 @@ namespace MyPointOfSale.WinForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
 
             UserController user = new UserController();
 
