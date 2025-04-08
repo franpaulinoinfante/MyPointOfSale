@@ -42,7 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientDao.cs" />
     <Compile Include="ConnectionToSQLServer.cs" />
+    <Compile Include="InvoiceDao.cs" />
     <Compile Include="ProductDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserDao.cs" />
