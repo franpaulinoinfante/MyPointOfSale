@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MyPointOfSale.Common.Cache
+﻿namespace MyPointOfSale.Common.Cache
 {
     public static class UserLoginCache
     {

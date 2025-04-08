@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnLogOut = new Button();
             usuarios = new LinkLabel();
@@ -57,9 +54,7 @@
             label11 = new Label();
             label12 = new Label();
             dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
+            panel3 = new Panel();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
@@ -71,6 +66,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -361,7 +357,7 @@
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI Semibold", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label11.ForeColor = Color.DimGray;
-            label11.Location = new Point(869, 492);
+            label11.Location = new Point(670, 508);
             label11.Margin = new Padding(4, 0, 4, 0);
             label11.Name = "label11";
             label11.Size = new Size(283, 86);
@@ -374,7 +370,7 @@
             label12.BackColor = Color.Transparent;
             label12.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label12.ForeColor = SystemColors.MenuHighlight;
-            label12.Location = new Point(868, 595);
+            label12.Location = new Point(670, 603);
             label12.Margin = new Padding(4, 0, 4, 0);
             label12.Name = "label12";
             label12.Size = new Size(308, 25);
@@ -391,43 +387,29 @@
             dataGridView1.BackgroundColor = SystemColors.Control;
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3 });
-            dataGridView1.Dock = DockStyle.Left;
-            dataGridView1.Location = new Point(241, 0);
+            dataGridView1.Location = new Point(8, 389);
             dataGridView1.Margin = new Padding(4, 3, 4, 3);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(621, 642);
+            dataGridView1.Size = new Size(621, 250);
             dataGridView1.TabIndex = 19;
             // 
-            // Column1
+            // panel3
             // 
-            dataGridViewCellStyle2.BackColor = Color.DimGray;
-            Column1.DefaultCellStyle = dataGridViewCellStyle2;
-            Column1.HeaderText = "ID";
-            Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            dataGridViewCellStyle3.BackColor = Color.DimGray;
-            Column2.DefaultCellStyle = dataGridViewCellStyle3;
-            Column2.HeaderText = "PRODUCTO";
-            Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            dataGridViewCellStyle4.BackColor = Color.DimGray;
-            Column3.DefaultCellStyle = dataGridViewCellStyle4;
-            Column3.HeaderText = "STOCK";
-            Column3.Name = "Column3";
+            panel3.Controls.Add(dataGridView1);
+            panel3.Controls.Add(label12);
+            panel3.Controls.Add(label11);
+            panel3.Dock = DockStyle.Fill;
+            panel3.Location = new Point(241, 0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(991, 642);
+            panel3.TabIndex = 20;
             // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1232, 642);
-            Controls.Add(dataGridView1);
-            Controls.Add(label12);
-            Controls.Add(label11);
+            Controls.Add(panel3);
             Controls.Add(panel1);
             Margin = new Padding(4, 3, 4, 3);
             Name = "Dashboard";
@@ -446,8 +428,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
 
         }
 
@@ -470,9 +453,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.LinkLabel reporte;
         private System.Windows.Forms.LinkLabel stock;
         private System.Windows.Forms.LinkLabel productos;
@@ -482,5 +462,6 @@
         private System.Windows.Forms.LinkLabel clientes;
         private Button btnLogOut;
         private Label lblUserName;
+        private Panel panel3;
     }
 }

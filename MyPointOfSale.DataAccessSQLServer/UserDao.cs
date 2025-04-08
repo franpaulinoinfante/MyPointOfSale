@@ -11,7 +11,7 @@ namespace MyPointOfSale.DataAccessSQLServer
             using (SqlConnection connection = ConnectionString)
             {
                 connection.Open();
-                using (System.Data.SqlClient.SqlCommand command = connection.CreateCommand())
+                using (SqlCommand command = connection.CreateCommand())
                 {
                     command.CommandText = "SELECT * FROM Users WHERE Username = @Username AND Password = @Password";
                     command.Parameters.AddWithValue("@Username", user.Username);
@@ -27,8 +27,8 @@ namespace MyPointOfSale.DataAccessSQLServer
                                 UserLoginCache.UserId = reader.GetInt32(0);
                                 UserLoginCache.FirstName = reader.GetString(3);
                                 UserLoginCache.LastName = reader.GetString(4);
-                                UserLoginCache.Position = reader.GetString(4);
-                                UserLoginCache.Email = reader.GetString(5);
+                                UserLoginCache.Position = reader.GetString(5);
+                                UserLoginCache.Email = reader.GetString(6);
                             }
 
                             return true;
@@ -41,5 +41,6 @@ namespace MyPointOfSale.DataAccessSQLServer
                 }
             }
         }
+
     }
 }
