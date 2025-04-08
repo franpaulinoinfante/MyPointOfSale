@@ -1,6 +1,6 @@
 ﻿namespace MyPointOfSale.WinForm
 {
-    partial class Usuarios
+    partial class frmUsuarios
     {
         /// <summary>
         /// Required designer variable.
@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.FirstName = new System.Windows.Forms.TextBox();
-            this.LastName = new System.Windows.Forms.TextBox();
-            this.Position = new System.Windows.Forms.TextBox();
-            this.UserId = new System.Windows.Forms.TextBox();
-            this.DocumentId = new System.Windows.Forms.ComboBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnCrear = new System.Windows.Forms.Button();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.txtPosition = new System.Windows.Forms.TextBox();
+            this.txtUserId = new System.Windows.Forms.TextBox();
+            this.cbbDocumentId = new System.Windows.Forms.ComboBox();
             this.catlbl = new System.Windows.Forms.Label();
             this.itblbl = new System.Windows.Forms.Label();
             this.prelbl = new System.Windows.Forms.Label();
@@ -44,105 +44,106 @@
             this.idlb = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.Password = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.Email = new System.Windows.Forms.TextBox();
-            this.DocumentNumber = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtDocumentNumber = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
             this.Username = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button4
+            // btnCancelar
             // 
-            this.button4.BackColor = System.Drawing.Color.PeachPuff;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(569, 331);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(210, 34);
-            this.button4.TabIndex = 36;
-            this.button4.Text = "Cancelar";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnCancelar.BackColor = System.Drawing.Color.PeachPuff;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(569, 331);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(210, 34);
+            this.btnCancelar.TabIndex = 36;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnEliminar
             // 
-            this.button3.BackColor = System.Drawing.Color.LightCoral;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(360, 331);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(159, 34);
-            this.button3.TabIndex = 35;
-            this.button3.Text = "Eliminar";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnEliminar.BackColor = System.Drawing.Color.LightCoral;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(360, 331);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(159, 34);
+            this.btnEliminar.TabIndex = 35;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnActualizar
             // 
-            this.button2.BackColor = System.Drawing.Color.DarkKhaki;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(195, 331);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(159, 34);
-            this.button2.TabIndex = 34;
-            this.button2.Text = "Actualizar";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnActualizar.BackColor = System.Drawing.Color.DarkKhaki;
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.Location = new System.Drawing.Point(195, 331);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(159, 34);
+            this.btnActualizar.TabIndex = 34;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnCrear
             // 
-            this.button1.BackColor = System.Drawing.Color.PaleGreen;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(30, 331);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(159, 34);
-            this.button1.TabIndex = 33;
-            this.button1.Text = "Crear";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnCrear.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCrear.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCrear.Location = new System.Drawing.Point(30, 331);
+            this.btnCrear.Name = "btnCrear";
+            this.btnCrear.Size = new System.Drawing.Size(159, 34);
+            this.btnCrear.TabIndex = 33;
+            this.btnCrear.Text = "Crear";
+            this.btnCrear.UseVisualStyleBackColor = false;
+            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 
-            // FirstName
+            // txtFirstName
             // 
-            this.FirstName.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.FirstName.Location = new System.Drawing.Point(136, 215);
-            this.FirstName.Name = "FirstName";
-            this.FirstName.Size = new System.Drawing.Size(210, 32);
-            this.FirstName.TabIndex = 32;
+            this.txtFirstName.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.txtFirstName.Location = new System.Drawing.Point(136, 215);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(210, 32);
+            this.txtFirstName.TabIndex = 32;
             // 
-            // LastName
+            // txtLastName
             // 
-            this.LastName.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.LastName.Location = new System.Drawing.Point(136, 265);
-            this.LastName.Name = "LastName";
-            this.LastName.Size = new System.Drawing.Size(210, 32);
-            this.LastName.TabIndex = 31;
+            this.txtLastName.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.txtLastName.Location = new System.Drawing.Point(136, 265);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(210, 32);
+            this.txtLastName.TabIndex = 31;
             // 
-            // Position
+            // txtPosition
             // 
-            this.Position.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.Position.Location = new System.Drawing.Point(569, 111);
-            this.Position.Name = "Position";
-            this.Position.Size = new System.Drawing.Size(210, 32);
-            this.Position.TabIndex = 30;
+            this.txtPosition.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.txtPosition.Location = new System.Drawing.Point(569, 111);
+            this.txtPosition.Name = "txtPosition";
+            this.txtPosition.Size = new System.Drawing.Size(210, 32);
+            this.txtPosition.TabIndex = 30;
             // 
-            // UserId
+            // txtUserId
             // 
-            this.UserId.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.UserId.Location = new System.Drawing.Point(136, 70);
-            this.UserId.Name = "UserId";
-            this.UserId.Size = new System.Drawing.Size(100, 32);
-            this.UserId.TabIndex = 29;
+            this.txtUserId.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.txtUserId.Location = new System.Drawing.Point(136, 70);
+            this.txtUserId.Name = "txtUserId";
+            this.txtUserId.Size = new System.Drawing.Size(100, 32);
+            this.txtUserId.TabIndex = 29;
             // 
-            // DocumentId
+            // cbbDocumentId
             // 
-            this.DocumentId.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.DocumentId.FormattingEnabled = true;
-            this.DocumentId.Location = new System.Drawing.Point(569, 215);
-            this.DocumentId.Name = "DocumentId";
-            this.DocumentId.Size = new System.Drawing.Size(210, 33);
-            this.DocumentId.TabIndex = 28;
+            this.cbbDocumentId.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.cbbDocumentId.FormattingEnabled = true;
+            this.cbbDocumentId.Location = new System.Drawing.Point(569, 215);
+            this.cbbDocumentId.Name = "cbbDocumentId";
+            this.cbbDocumentId.Size = new System.Drawing.Size(210, 33);
+            this.cbbDocumentId.TabIndex = 28;
             // 
             // catlbl
             // 
@@ -221,13 +222,13 @@
             this.label1.TabIndex = 21;
             this.label1.Text = "Usuarios";
             // 
-            // Password
+            // txtPassword
             // 
-            this.Password.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.Password.Location = new System.Drawing.Point(136, 165);
-            this.Password.Name = "Password";
-            this.Password.Size = new System.Drawing.Size(210, 32);
-            this.Password.TabIndex = 37;
+            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.txtPassword.Location = new System.Drawing.Point(136, 165);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(210, 32);
+            this.txtPassword.TabIndex = 37;
             // 
             // label2
             // 
@@ -262,29 +263,29 @@
             this.label4.TabIndex = 40;
             this.label4.Text = "Email";
             // 
-            // Email
+            // txtEmail
             // 
-            this.Email.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.Email.Location = new System.Drawing.Point(569, 165);
-            this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(210, 32);
-            this.Email.TabIndex = 41;
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.txtEmail.Location = new System.Drawing.Point(569, 165);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(210, 32);
+            this.txtEmail.TabIndex = 41;
             // 
-            // DocumentNumber
+            // txtDocumentNumber
             // 
-            this.DocumentNumber.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.DocumentNumber.Location = new System.Drawing.Point(569, 266);
-            this.DocumentNumber.Name = "DocumentNumber";
-            this.DocumentNumber.Size = new System.Drawing.Size(210, 32);
-            this.DocumentNumber.TabIndex = 42;
+            this.txtDocumentNumber.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.txtDocumentNumber.Location = new System.Drawing.Point(569, 266);
+            this.txtDocumentNumber.Name = "txtDocumentNumber";
+            this.txtDocumentNumber.Size = new System.Drawing.Size(210, 32);
+            this.txtDocumentNumber.TabIndex = 42;
             // 
-            // textBox1
+            // txtUsuario
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.textBox1.Location = new System.Drawing.Point(136, 114);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(210, 32);
-            this.textBox1.TabIndex = 44;
+            this.txtUsuario.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.txtUsuario.Location = new System.Drawing.Point(136, 114);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(210, 32);
+            this.txtUsuario.TabIndex = 44;
             // 
             // Username
             // 
@@ -297,29 +298,29 @@
             this.Username.TabIndex = 43;
             this.Username.Text = "Usuario";
             // 
-            // Usuarios
+            // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(68)))), ((int)(((byte)(108)))));
             this.ClientSize = new System.Drawing.Size(804, 635);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.Username);
-            this.Controls.Add(this.DocumentNumber);
-            this.Controls.Add(this.Email);
+            this.Controls.Add(this.txtDocumentNumber);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.Password);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.FirstName);
-            this.Controls.Add(this.LastName);
-            this.Controls.Add(this.Position);
-            this.Controls.Add(this.UserId);
-            this.Controls.Add(this.DocumentId);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnActualizar);
+            this.Controls.Add(this.btnCrear);
+            this.Controls.Add(this.txtFirstName);
+            this.Controls.Add(this.txtLastName);
+            this.Controls.Add(this.txtPosition);
+            this.Controls.Add(this.txtUserId);
+            this.Controls.Add(this.cbbDocumentId);
             this.Controls.Add(this.catlbl);
             this.Controls.Add(this.itblbl);
             this.Controls.Add(this.prelbl);
@@ -327,7 +328,7 @@
             this.Controls.Add(this.idlb);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
-            this.Name = "Usuarios";
+            this.Name = "frmUsuarios";
             this.Text = "Usuarios";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -337,15 +338,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox FirstName;
-        private System.Windows.Forms.TextBox LastName;
-        private System.Windows.Forms.TextBox Position;
-        private System.Windows.Forms.TextBox UserId;
-        private System.Windows.Forms.ComboBox DocumentId;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.Button btnCrear;
+        private System.Windows.Forms.TextBox txtFirstName;
+        private System.Windows.Forms.TextBox txtLastName;
+        private System.Windows.Forms.TextBox txtPosition;
+        private System.Windows.Forms.TextBox txtUserId;
+        private System.Windows.Forms.ComboBox cbbDocumentId;
         private System.Windows.Forms.Label catlbl;
         private System.Windows.Forms.Label itblbl;
         private System.Windows.Forms.Label prelbl;
@@ -353,13 +354,13 @@
         private System.Windows.Forms.Label idlb;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox Password;
+        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox Email;
-        private System.Windows.Forms.TextBox DocumentNumber;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtDocumentNumber;
+        private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label Username;
     }
 }
