@@ -120,6 +120,7 @@ namespace MyPointOfSale.WinForm
             this.usuarios.TabIndex = 24;
             this.usuarios.TabStop = true;
             this.usuarios.Text = "Usuarios y Seguridad";
+            this.usuarios.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.usuarios_LinkClicked);
             // 
             // clientes
             // 

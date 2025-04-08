@@ -8,11 +8,14 @@ namespace MyPointOfSale.WinForm
     public partial class Dashboard : Form
     {
         private readonly ProductController _productController;
+        private readonly UserController _userController;
+
         public Dashboard()
         {
             InitializeComponent();
 
             _productController = new ProductController();
+            _userController = new UserController();
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
@@ -44,6 +47,12 @@ namespace MyPointOfSale.WinForm
             {
                 this.Close();
             }
+        }
+
+        private void usuarios_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmUsuarios usuarios = new frmUsuarios(_userController);
+            usuarios.Show();
         }
     }
 
