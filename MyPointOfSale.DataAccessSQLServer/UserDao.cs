@@ -49,6 +49,7 @@ namespace MyPointOfSale.DataAccessSQLServer
                         @"SELECT 
 	                        [UserId],
 	                        [dbo].[Positions].[PositionName],
+                            [Username],
 	                        [FirstName],[LastName],
 	                        [dbo].[Documents].[DocumentName],
 	                        [DocumentNumber],[Email]
@@ -63,6 +64,7 @@ namespace MyPointOfSale.DataAccessSQLServer
                             users.Add(new User()
                             {
                                 UserId = reader.GetInt32(0),
+                                Username = reader.GetString(2),
                                 Position = new Position()
                                 {
                                     PositionName = reader.GetString(1)
@@ -106,7 +108,6 @@ namespace MyPointOfSale.DataAccessSQLServer
                                 UserLoginCache.UserId = reader.GetInt32(0);
                                 UserLoginCache.FirstName = reader.GetString(3);
                                 UserLoginCache.LastName = reader.GetString(4);
-                                //UserLoginCache.Position = reader.GetString(6);
                                 UserLoginCache.Email = reader.GetString(5);
                             }
 
@@ -156,8 +157,8 @@ namespace MyPointOfSale.DataAccessSQLServer
                     cmd.CommandType = CommandType.Text;
                     cmd.Parameters.AddWithValue("@UserId", user.UserId);
                     cmd.Parameters.AddWithValue("@Username", user.Username);
-                    cmd.Parameters.AddWithValue("@Password", user.Password);
                     cmd.Parameters.AddWithValue("@FirstName", user.FirstName);
+                    cmd.Parameters.AddWithValue("@Password", user.Password);
                     cmd.Parameters.AddWithValue("@LastName", user.LastName);
                     cmd.Parameters.AddWithValue("@Email", user.Email);
                     cmd.Parameters.AddWithValue("@DocumentId", user.DocumentType.DocumentID);

@@ -1,12 +1,16 @@
 ﻿using MyPointOfSale.Controllers;
 using MyPointOfSale.ViewModels;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace MyPointOfSale.WinForm
 {
     public partial class frmUsuarios : Form
     {
+        private IReadOnlyList<UserViewModel> _users;
+
         private readonly UserController _userController;
 
         public frmUsuarios(UserController userController)
@@ -54,6 +58,7 @@ namespace MyPointOfSale.WinForm
         {
             try
             {
+                _users = _userController.GetUsers();
                 dataGridView1.DataSource = _userController.GetUsers();
             }
             catch (Exception ex)
@@ -88,6 +93,8 @@ namespace MyPointOfSale.WinForm
             {
                 LoadUsers();
             }
+
+            ClearFields();
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -117,6 +124,8 @@ namespace MyPointOfSale.WinForm
             {
                 LoadUsers();
             }
+
+            ClearFields();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -134,6 +143,51 @@ namespace MyPointOfSale.WinForm
             {
                 LoadUsers();
             }
+
+            ClearFields();
+        }
+
+        private void ClearFields()
+        {
+            txtUsuario.Clear();
+            txtPassword.Clear();
+            txtFirstName.Clear();
+            txtLastName.Clear();
+            txtEmail.Clear();
+            txtDocumentNumber.Clear();
+            cbbPosition.SelectedIndex = -1;
+            cbbDocumentId.SelectedIndex = -1;
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            ClearFields();
+            btnActualizar.Enabled = false;
+            btnEliminar.Enabled = false;
+            btnCrear.Enabled = true;
+
+        }
+
+        private void FillWithDataGridView(DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
+            txtUserId.Text = selectedRow.Cells[0].Value.ToString();
+            txtUsuario.Text = selectedRow.Cells[1].Value.ToString();
+            txtPassword.Text = "------------";
+
+            cbbPosition.SelectedText = selectedRow.Cells[2].Value.ToString();
+            txtFirstName.Text = selectedRow.Cells[3].Value.ToString();
+            txtLastName.Text = selectedRow.Cells[4].Value.ToString();
+
+            cbbDocumentId.SelectedText = selectedRow.Cells[0].Value.ToString();
+            txtDocumentNumber.Text = selectedRow.Cells[0].Value.ToString();
+
+            txtEmail.Text = selectedRow.Cells[0].Value.ToString();
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            FillWithDataGridView(e);
         }
     }
 }

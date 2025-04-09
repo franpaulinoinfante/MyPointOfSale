@@ -57,7 +57,8 @@ namespace MyPointOfSale.WinForm
 
         private void productos_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            frmProductos productos = new frmProductos(_productController);
+            productos.Show();
         }
     }
 

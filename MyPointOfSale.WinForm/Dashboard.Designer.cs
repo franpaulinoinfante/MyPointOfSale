@@ -38,7 +38,7 @@ namespace MyPointOfSale.WinForm
             this.clientes = new System.Windows.Forms.LinkLabel();
             this.reporte = new System.Windows.Forms.LinkLabel();
             this.stock = new System.Windows.Forms.LinkLabel();
-            this.productos = new System.Windows.Forms.LinkLabel();
+            this.lklProductos = new System.Windows.Forms.LinkLabel();
             this.documentos = new System.Windows.Forms.LinkLabel();
             this.ventas = new System.Windows.Forms.LinkLabel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -80,7 +80,7 @@ namespace MyPointOfSale.WinForm
             this.panel1.Controls.Add(this.clientes);
             this.panel1.Controls.Add(this.reporte);
             this.panel1.Controls.Add(this.stock);
-            this.panel1.Controls.Add(this.productos);
+            this.panel1.Controls.Add(this.lklProductos);
             this.panel1.Controls.Add(this.documentos);
             this.panel1.Controls.Add(this.ventas);
             this.panel1.Controls.Add(this.panel2);
@@ -161,19 +161,19 @@ namespace MyPointOfSale.WinForm
             this.stock.TabStop = true;
             this.stock.Text = "Stock";
             // 
-            // productos
+            // lklProductos
             // 
-            this.productos.AutoSize = true;
-            this.productos.Font = new System.Drawing.Font("Segoe UI Semilight", 12F);
-            this.productos.ForeColor = System.Drawing.SystemColors.Control;
-            this.productos.LinkColor = System.Drawing.SystemColors.Control;
-            this.productos.Location = new System.Drawing.Point(43, 162);
-            this.productos.Name = "productos";
-            this.productos.Size = new System.Drawing.Size(79, 21);
-            this.productos.TabIndex = 20;
-            this.productos.TabStop = true;
-            this.productos.Text = "Productos";
-            this.productos.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.productos_LinkClicked);
+            this.lklProductos.AutoSize = true;
+            this.lklProductos.Font = new System.Drawing.Font("Segoe UI Semilight", 12F);
+            this.lklProductos.ForeColor = System.Drawing.SystemColors.Control;
+            this.lklProductos.LinkColor = System.Drawing.SystemColors.Control;
+            this.lklProductos.Location = new System.Drawing.Point(43, 162);
+            this.lklProductos.Name = "lklProductos";
+            this.lklProductos.Size = new System.Drawing.Size(79, 21);
+            this.lklProductos.TabIndex = 20;
+            this.lklProductos.TabStop = true;
+            this.lklProductos.Text = "Productos";
+            this.lklProductos.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.productos_LinkClicked);
             // 
             // documentos
             // 
@@ -433,7 +433,7 @@ namespace MyPointOfSale.WinForm
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.LinkLabel reporte;
         private System.Windows.Forms.LinkLabel stock;
-        private System.Windows.Forms.LinkLabel productos;
+        private System.Windows.Forms.LinkLabel lklProductos;
         private System.Windows.Forms.LinkLabel documentos;
         private System.Windows.Forms.LinkLabel ventas;
         private System.Windows.Forms.LinkLabel usuarios;

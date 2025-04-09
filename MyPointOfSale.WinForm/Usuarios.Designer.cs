@@ -66,6 +66,7 @@
             this.btnCancelar.TabIndex = 11;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnEliminar
             // 
@@ -114,7 +115,6 @@
             this.txtFirstName.Size = new System.Drawing.Size(210, 32);
             this.txtFirstName.TabIndex = 2;
             this.txtFirstName.Tag = "";
-            this.txtFirstName.Text = "nombreTest";
             // 
             // txtLastName
             // 
@@ -124,10 +124,10 @@
             this.txtLastName.Size = new System.Drawing.Size(210, 32);
             this.txtLastName.TabIndex = 3;
             this.txtLastName.Tag = "";
-            this.txtLastName.Text = "apellidoTest";
             // 
             // txtUserId
             // 
+            this.txtUserId.Enabled = false;
             this.txtUserId.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.txtUserId.Location = new System.Drawing.Point(136, 70);
             this.txtUserId.Name = "txtUserId";
@@ -200,11 +200,15 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 386);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 371);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(804, 249);
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(804, 264);
             this.dataGridView1.TabIndex = 12;
             // 
             // label1
@@ -227,7 +231,6 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(210, 32);
             this.txtPassword.TabIndex = 1;
-            this.txtPassword.Text = "contraseñaTest";
             // 
             // label2
             // 
@@ -267,9 +270,9 @@
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.txtEmail.Location = new System.Drawing.Point(569, 165);
             this.txtEmail.Name = "txtEmail";
+            this.txtEmail.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.txtEmail.Size = new System.Drawing.Size(210, 32);
             this.txtEmail.TabIndex = 5;
-            this.txtEmail.Text = "emailTest@test.com";
             // 
             // txtDocumentNumber
             // 
@@ -278,7 +281,6 @@
             this.txtDocumentNumber.Name = "txtDocumentNumber";
             this.txtDocumentNumber.Size = new System.Drawing.Size(210, 32);
             this.txtDocumentNumber.TabIndex = 7;
-            this.txtDocumentNumber.Text = "047-8955325-5";
             // 
             // txtUsuario
             // 
@@ -287,7 +289,6 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(210, 32);
             this.txtUsuario.TabIndex = 0;
-            this.txtUsuario.Text = "usuarioTest";
             // 
             // Username
             // 
@@ -304,9 +305,9 @@
             // 
             this.cbbPosition.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.cbbPosition.FormattingEnabled = true;
-            this.cbbPosition.Location = new System.Drawing.Point(569, 111);
+            this.cbbPosition.Location = new System.Drawing.Point(508, 111);
             this.cbbPosition.Name = "cbbPosition";
-            this.cbbPosition.Size = new System.Drawing.Size(210, 33);
+            this.cbbPosition.Size = new System.Drawing.Size(271, 33);
             this.cbbPosition.TabIndex = 4;
             // 
             // frmUsuarios

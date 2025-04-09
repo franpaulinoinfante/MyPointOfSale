@@ -1,6 +1,6 @@
 ﻿namespace MyPointOfSale.WinForm
 {
-    partial class Productos
+    partial class frmProductos
     {
         /// <summary>
         /// Required designer variable.
@@ -35,7 +35,7 @@
             this.prelbl = new System.Windows.Forms.Label();
             this.itblbl = new System.Windows.Forms.Label();
             this.catlbl = new System.Windows.Forms.Label();
-            this.Category = new System.Windows.Forms.ComboBox();
+            this.cbbCategory = new System.Windows.Forms.ComboBox();
             this.Id = new System.Windows.Forms.TextBox();
             this.ITBIS = new System.Windows.Forms.TextBox();
             this.Price = new System.Windows.Forms.TextBox();
@@ -62,6 +62,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.Location = new System.Drawing.Point(0, 347);
@@ -124,14 +125,14 @@
             this.catlbl.TabIndex = 10;
             this.catlbl.Text = "Category";
             // 
-            // Category
+            // cbbCategory
             // 
-            this.Category.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.Category.FormattingEnabled = true;
-            this.Category.Location = new System.Drawing.Point(149, 122);
-            this.Category.Name = "Category";
-            this.Category.Size = new System.Drawing.Size(210, 33);
-            this.Category.TabIndex = 11;
+            this.cbbCategory.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.cbbCategory.FormattingEnabled = true;
+            this.cbbCategory.Location = new System.Drawing.Point(149, 122);
+            this.cbbCategory.Name = "cbbCategory";
+            this.cbbCategory.Size = new System.Drawing.Size(210, 33);
+            this.cbbCategory.TabIndex = 11;
             // 
             // Id
             // 
@@ -214,7 +215,7 @@
             this.button4.Text = "Cancelar";
             this.button4.UseVisualStyleBackColor = false;
             // 
-            // Productos
+            // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(18F, 45F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -228,7 +229,7 @@
             this.Controls.Add(this.Price);
             this.Controls.Add(this.ITBIS);
             this.Controls.Add(this.Id);
-            this.Controls.Add(this.Category);
+            this.Controls.Add(this.cbbCategory);
             this.Controls.Add(this.catlbl);
             this.Controls.Add(this.itblbl);
             this.Controls.Add(this.prelbl);
@@ -238,8 +239,9 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold);
             this.Margin = new System.Windows.Forms.Padding(9, 10, 9, 10);
-            this.Name = "Productos";
+            this.Name = "frmProductos";
             this.Text = "Products";
+            this.Load += new System.EventHandler(this.frmProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -254,7 +256,7 @@
         private System.Windows.Forms.Label prelbl;
         private System.Windows.Forms.Label itblbl;
         private System.Windows.Forms.Label catlbl;
-        private System.Windows.Forms.ComboBox Category;
+        private System.Windows.Forms.ComboBox cbbCategory;
         private System.Windows.Forms.TextBox Id;
         private System.Windows.Forms.TextBox ITBIS;
         private System.Windows.Forms.TextBox Price;

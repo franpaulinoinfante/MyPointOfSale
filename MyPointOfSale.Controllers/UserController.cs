@@ -28,6 +28,7 @@ namespace MyPointOfSale.Controllers
                 users.Add(new UserViewModel()
                 {
                     UserId = user.UserId,
+                    Username = user.Username,
                     PositionName = user.Position.PositionName,
                     FirstName = user.FirstName,
                     LastName = user.LastName,
