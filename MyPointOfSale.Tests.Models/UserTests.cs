@@ -1,5 +1,5 @@
-using NUnit.Framework;
 using MyPointOfSale.Models;
+using NUnit.Framework;
 
 namespace MyPointOfSale.Tests.Models
 {
@@ -10,11 +10,11 @@ namespace MyPointOfSale.Tests.Models
         public void User_ShouldAssignPropertiesCorrectly()
         {
             // Arrange
-            var documentType = new DocumentType { DocumentID = 1, DocumentName = "Passport" };
-            var position = new Position { PositionId = 1, PositionName = "Manager" };
+            DocumentType documentType = new DocumentType { DocumentID = 1, DocumentName = "Passport" };
+            Position position = new Position { PositionId = 1, PositionName = "Manager" };
 
             // Act
-            var user = new User
+            User user = new User
             {
                 UserId = 1,
                 Username = "johndoe",
@@ -39,13 +39,11 @@ namespace MyPointOfSale.Tests.Models
             Assert.That(user.Position, Is.EqualTo(position));
         }
 
-
-
         [Test]
         public void User_ShouldHandleNullValues()
         {
             // Act
-            var user = new User
+            User user = new User
             {
                 UserId = 0,
                 Username = null,

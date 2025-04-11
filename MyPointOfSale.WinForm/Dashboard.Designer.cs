@@ -31,7 +31,8 @@ namespace MyPointOfSale.WinForm
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.usuarios = new System.Windows.Forms.LinkLabel();
@@ -40,7 +41,7 @@ namespace MyPointOfSale.WinForm
             this.stock = new System.Windows.Forms.LinkLabel();
             this.lklProductos = new System.Windows.Forms.LinkLabel();
             this.documentos = new System.Windows.Forms.LinkLabel();
-            this.ventas = new System.Windows.Forms.LinkLabel();
+            this.lklInvoice = new System.Windows.Forms.LinkLabel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblUserEmail = new System.Windows.Forms.Label();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -54,10 +55,24 @@ namespace MyPointOfSale.WinForm
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.lblNCFTotales = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblTotalProducts = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.lblSalesTotals = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblClientsQuantities = new System.Windows.Forms.Label();
+            this.ctrlDateTime = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -70,6 +85,11 @@ namespace MyPointOfSale.WinForm
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -82,7 +102,7 @@ namespace MyPointOfSale.WinForm
             this.panel1.Controls.Add(this.stock);
             this.panel1.Controls.Add(this.lklProductos);
             this.panel1.Controls.Add(this.documentos);
-            this.panel1.Controls.Add(this.ventas);
+            this.panel1.Controls.Add(this.lklInvoice);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.pictureBox7);
@@ -188,18 +208,19 @@ namespace MyPointOfSale.WinForm
             this.documentos.TabStop = true;
             this.documentos.Text = "Documentos";
             // 
-            // ventas
+            // lklInvoice
             // 
-            this.ventas.AutoSize = true;
-            this.ventas.Font = new System.Drawing.Font("Segoe UI Semilight", 12F);
-            this.ventas.ForeColor = System.Drawing.SystemColors.Control;
-            this.ventas.LinkColor = System.Drawing.SystemColors.Control;
-            this.ventas.Location = new System.Drawing.Point(43, 59);
-            this.ventas.Name = "ventas";
-            this.ventas.Size = new System.Drawing.Size(56, 21);
-            this.ventas.TabIndex = 18;
-            this.ventas.TabStop = true;
-            this.ventas.Text = "Ventas";
+            this.lklInvoice.AutoSize = true;
+            this.lklInvoice.Font = new System.Drawing.Font("Segoe UI Semilight", 12F);
+            this.lklInvoice.ForeColor = System.Drawing.SystemColors.Control;
+            this.lklInvoice.LinkColor = System.Drawing.SystemColors.Control;
+            this.lklInvoice.Location = new System.Drawing.Point(43, 59);
+            this.lklInvoice.Name = "lklInvoice";
+            this.lklInvoice.Size = new System.Drawing.Size(56, 21);
+            this.lklInvoice.TabIndex = 18;
+            this.lklInvoice.TabStop = true;
+            this.lklInvoice.Text = "Ventas";
+            this.lklInvoice.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lklInvoice_LinkClicked);
             // 
             // panel2
             // 
@@ -218,20 +239,22 @@ namespace MyPointOfSale.WinForm
             // 
             this.lblUserEmail.AutoSize = true;
             this.lblUserEmail.BackColor = System.Drawing.Color.White;
-            this.lblUserEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblUserEmail.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.lblUserEmail.ForeColor = System.Drawing.Color.Black;
-            this.lblUserEmail.Location = new System.Drawing.Point(65, 57);
+            this.lblUserEmail.Location = new System.Drawing.Point(58, 58);
             this.lblUserEmail.Name = "lblUserEmail";
-            this.lblUserEmail.Size = new System.Drawing.Size(59, 15);
+            this.lblUserEmail.Size = new System.Drawing.Size(57, 13);
             this.lblUserEmail.TabIndex = 3;
             this.lblUserEmail.Text = "UserEmail";
+            this.lblUserEmail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBox8
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.White;
+            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
             this.pictureBox8.Location = new System.Drawing.Point(3, 13);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(59, 65);
+            this.pictureBox8.Size = new System.Drawing.Size(51, 65);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox8.TabIndex = 0;
             this.pictureBox8.TabStop = false;
@@ -242,7 +265,7 @@ namespace MyPointOfSale.WinForm
             this.lblPosition.BackColor = System.Drawing.Color.White;
             this.lblPosition.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblPosition.ForeColor = System.Drawing.Color.Black;
-            this.lblPosition.Location = new System.Drawing.Point(66, 3);
+            this.lblPosition.Location = new System.Drawing.Point(58, 3);
             this.lblPosition.Name = "lblPosition";
             this.lblPosition.Size = new System.Drawing.Size(53, 15);
             this.lblPosition.TabIndex = 1;
@@ -254,7 +277,7 @@ namespace MyPointOfSale.WinForm
             this.lblUserName.BackColor = System.Drawing.Color.White;
             this.lblUserName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblUserName.ForeColor = System.Drawing.Color.Black;
-            this.lblUserName.Location = new System.Drawing.Point(66, 29);
+            this.lblUserName.Location = new System.Drawing.Point(59, 29);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(62, 15);
             this.lblUserName.TabIndex = 2;
@@ -274,6 +297,7 @@ namespace MyPointOfSale.WinForm
             // 
             // pictureBox7
             // 
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
             this.pictureBox7.Location = new System.Drawing.Point(7, 340);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(25, 25);
@@ -283,6 +307,7 @@ namespace MyPointOfSale.WinForm
             // 
             // pictureBox6
             // 
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
             this.pictureBox6.Location = new System.Drawing.Point(7, 399);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(25, 25);
@@ -292,6 +317,7 @@ namespace MyPointOfSale.WinForm
             // 
             // pictureBox5
             // 
+            this.pictureBox5.Image = global::MyPointOfSale.WinForm.Properties.Resources.icons8_report_50;
             this.pictureBox5.Location = new System.Drawing.Point(7, 281);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(25, 25);
@@ -301,6 +327,7 @@ namespace MyPointOfSale.WinForm
             // 
             // pictureBox4
             // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(7, 162);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(25, 25);
@@ -310,6 +337,7 @@ namespace MyPointOfSale.WinForm
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(7, 222);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(25, 25);
@@ -319,6 +347,7 @@ namespace MyPointOfSale.WinForm
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(7, 103);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(25, 25);
@@ -328,61 +357,211 @@ namespace MyPointOfSale.WinForm
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(7, 59);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox1.Size = new System.Drawing.Size(30, 25);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // label11
+            // lblTime
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.DimGray;
-            this.label11.Location = new System.Drawing.Point(545, 440);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(283, 86);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "23:59:59";
+            this.lblTime.AutoSize = true;
+            this.lblTime.Font = new System.Drawing.Font("Segoe UI Semibold", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.ForeColor = System.Drawing.Color.DimGray;
+            this.lblTime.Location = new System.Drawing.Point(554, 437);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(283, 86);
+            this.lblTime.TabIndex = 1;
+            this.lblTime.Text = "23:59:59";
             // 
-            // label12
+            // lblDate
             // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label12.Location = new System.Drawing.Point(545, 523);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(308, 25);
-            this.label12.TabIndex = 18;
-            this.label12.Text = "sábado, 31 de diciembre, 2011";
+            this.lblDate.AutoSize = true;
+            this.lblDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblDate.Location = new System.Drawing.Point(672, 523);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(64, 24);
+            this.lblDate.TabIndex = 18;
+            this.lblDate.Text = "Fecha";
+            this.lblDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 337);
+            this.dataGridView1.Location = new System.Drawing.Point(7, 107);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(532, 217);
+            this.dataGridView1.Size = new System.Drawing.Size(571, 447);
             this.dataGridView1.TabIndex = 19;
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.tableLayoutPanel1);
             this.panel3.Controls.Add(this.dataGridView1);
-            this.panel3.Controls.Add(this.label12);
-            this.panel3.Controls.Add(this.label11);
+            this.panel3.Controls.Add(this.lblDate);
+            this.panel3.Controls.Add(this.lblTime);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(207, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(849, 556);
             this.panel3.TabIndex = 20;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Controls.Add(this.panel7, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel6, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel5, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel4, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(849, 100);
+            this.tableLayoutPanel1.TabIndex = 20;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.lblNCFTotales);
+            this.panel7.Controls.Add(this.label5);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel7.Location = new System.Drawing.Point(639, 3);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(207, 94);
+            this.panel7.TabIndex = 3;
+            // 
+            // lblNCFTotales
+            // 
+            this.lblNCFTotales.AutoSize = true;
+            this.lblNCFTotales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNCFTotales.Location = new System.Drawing.Point(59, 46);
+            this.lblNCFTotales.Name = "lblNCFTotales";
+            this.lblNCFTotales.Size = new System.Drawing.Size(94, 16);
+            this.lblNCFTotales.TabIndex = 7;
+            this.lblNCFTotales.Text = "NCF Totales";
+            this.lblNCFTotales.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(3, 6);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(94, 16);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "NCF Totales";
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.label4);
+            this.panel6.Controls.Add(this.lblTotalProducts);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(427, 3);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(206, 94);
+            this.panel6.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(3, 6);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(139, 16);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Total de Productos";
+            // 
+            // lblTotalProducts
+            // 
+            this.lblTotalProducts.AutoSize = true;
+            this.lblTotalProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalProducts.Location = new System.Drawing.Point(12, 46);
+            this.lblTotalProducts.Name = "lblTotalProducts";
+            this.lblTotalProducts.Size = new System.Drawing.Size(139, 16);
+            this.lblTotalProducts.TabIndex = 4;
+            this.lblTotalProducts.Text = "Total de Productos";
+            this.lblTotalProducts.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.lblSalesTotals);
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(215, 3);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(206, 94);
+            this.panel5.TabIndex = 1;
+            // 
+            // lblSalesTotals
+            // 
+            this.lblSalesTotals.AutoSize = true;
+            this.lblSalesTotals.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSalesTotals.Location = new System.Drawing.Point(37, 46);
+            this.lblSalesTotals.Name = "lblSalesTotals";
+            this.lblSalesTotals.Size = new System.Drawing.Size(112, 16);
+            this.lblSalesTotals.TabIndex = 0;
+            this.lblSalesTotals.Text = "Ventas Totales";
+            this.lblSalesTotals.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(112, 16);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Ventas Totales";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Controls.Add(this.lblClientsQuantities);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(3, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(206, 94);
+            this.panel4.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(3, 6);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 16);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Clientes";
+            // 
+            // lblClientsQuantities
+            // 
+            this.lblClientsQuantities.AutoSize = true;
+            this.lblClientsQuantities.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClientsQuantities.Location = new System.Drawing.Point(24, 46);
+            this.lblClientsQuantities.Name = "lblClientsQuantities";
+            this.lblClientsQuantities.Size = new System.Drawing.Size(149, 16);
+            this.lblClientsQuantities.TabIndex = 3;
+            this.lblClientsQuantities.Text = "Cantidad de clientes";
+            this.lblClientsQuantities.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ctrlDateTime
+            // 
+            this.ctrlDateTime.Enabled = true;
+            this.ctrlDateTime.Tick += new System.EventHandler(this.ctrlDateTime_Tick);
             // 
             // Dashboard
             // 
@@ -393,6 +572,7 @@ namespace MyPointOfSale.WinForm
             this.Controls.Add(this.panel1);
             this.Name = "Dashboard";
             this.Text = "Dashboard";
+            this.Load += new System.EventHandler(this.Dashboard_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -408,6 +588,15 @@ namespace MyPointOfSale.WinForm
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -428,18 +617,32 @@ namespace MyPointOfSale.WinForm
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblPosition;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.LinkLabel reporte;
         private System.Windows.Forms.LinkLabel stock;
         private System.Windows.Forms.LinkLabel lklProductos;
         private System.Windows.Forms.LinkLabel documentos;
-        private System.Windows.Forms.LinkLabel ventas;
+        private System.Windows.Forms.LinkLabel lklInvoice;
         private System.Windows.Forms.LinkLabel usuarios;
         private System.Windows.Forms.LinkLabel clientes;
         private Button btnLogOut;
         private Label lblUserName;
         private Panel panel3;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Panel panel7;
+        private Panel panel6;
+        private Panel panel5;
+        private Label lblClientsQuantities;
+        private Label label2;
+        private Panel panel4;
+        private Label label1;
+        private Label lblSalesTotals;
+        private Label lblNCFTotales;
+        private Label label5;
+        private Label label4;
+        private Label lblTotalProducts;
+        private Timer ctrlDateTime;
     }
 }

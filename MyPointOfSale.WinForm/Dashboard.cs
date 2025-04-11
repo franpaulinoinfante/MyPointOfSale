@@ -9,6 +9,7 @@ namespace MyPointOfSale.WinForm
     {
         private readonly ProductController _productController;
         private readonly UserController _userController;
+        private readonly InvoiceController _invoiceController;
 
         public Dashboard()
         {
@@ -16,12 +17,76 @@ namespace MyPointOfSale.WinForm
 
             _productController = new ProductController();
             _userController = new UserController();
+            _invoiceController = new InvoiceController();
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
             LoadUserData();
             LoadProducts();
+            LoadTableLayoutPanel();
+
+        }
+
+        private void LoadTableLayoutPanel()
+        {
+            LoadClientsTotals();
+            LoadSalesTotales();
+            LoadTotalProducts();
+            LoadTotalNCFUtilizados();
+            
+        }
+
+        private void LoadClientsTotals()
+        {
+            int total = _invoiceController.CountClients();
+            if (total > 0)
+            {
+                lblClientsQuantities.Text = $"{total.ToString()} Clientes actuales";
+            }
+            else
+            {
+                lblClientsQuantities.Text = "Clientes Totales";
+            }
+        }
+
+        private void LoadSalesTotales()
+        {
+            decimal totalSales = _invoiceController.CalculateSalesTotal();
+            if (totalSales > 0)
+            {
+                lblSalesTotals.Text = totalSales.ToString("C2");
+            }
+            else
+            {
+                lblSalesTotals.Text = "Ventas Totales";
+            }
+        }
+
+        private void LoadTotalProducts()
+        {
+            int productsTotals = _invoiceController.CountProducts();
+            if (productsTotals > 0)
+            {
+                lblTotalProducts.Text = $"{productsTotals} productos Registrados";
+            }
+            else
+            {
+                lblTotalProducts.Text = "Productos Totales";
+            }
+        }
+
+        private void LoadTotalNCFUtilizados()
+        {
+            int totalNcfUsed = _invoiceController.CountNcfUsed();
+            if (totalNcfUsed > 0)
+            {
+                lblNCFTotales.Text = $"{totalNcfUsed} NCFs utilizados";
+            }
+            else
+            {
+                lblNCFTotales.Text = "NCFs utilizados";
+            }
         }
 
         private void LoadProducts()
@@ -59,6 +124,19 @@ namespace MyPointOfSale.WinForm
         {
             frmProductos productos = new frmProductos(_productController);
             productos.Show();
+        }
+
+        private void lklInvoice_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmInvoice frmInvoice = new frmInvoice(_invoiceController);
+            frmInvoice.Show();
+            LoadTableLayoutPanel();
+        }
+
+        private void ctrlDateTime_Tick(object sender, EventArgs e)
+        {
+            lblTime.Text = DateTime.Now.ToString("hh:mm:ss");
+            lblDate.Text = DateTime.Now.ToString("dddd mmmm yyy");
         }
     }
 

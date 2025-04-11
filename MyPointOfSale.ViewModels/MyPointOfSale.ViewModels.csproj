@@ -42,7 +42,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoriesViewModel.cs" />
+    <Compile Include="ClientsViewModel.cs" />
     <Compile Include="DocumentTypeViewModel.cs" />
+    <Compile Include="Invoice\ClientViewModel.cs" />
+    <Compile Include="Invoice\InvoiceViewModel.cs" />
+    <Compile Include="Invoice\LineOfProductViewModel.cs" />
+    <Compile Include="Invoice\ProductLineViewModel.cs" />
+    <Compile Include="NCFViewModel.cs" />
     <Compile Include="PositionsViewModel.cs" />
     <Compile Include="ProductViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

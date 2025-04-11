@@ -42,7 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClientDao.cs" />
     <Compile Include="ConnectionToSQLServer.cs" />
     <Compile Include="DocumentDao.cs" />
     <Compile Include="InvoiceDao.cs" />

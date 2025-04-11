@@ -44,7 +44,7 @@ namespace MyPointOfSale.WinForm
         {
             try
             {
-                var products = _productController.GetProducts();
+                System.Collections.Generic.IReadOnlyList<ViewModels.ProductViewModel> products = _productController.GetProducts();
                 dataGridView1.DataSource = products;
                 dataGridView1.Columns["Category"].Visible = false; // Hide the Category column
             }

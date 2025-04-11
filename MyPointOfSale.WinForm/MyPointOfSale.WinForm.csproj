@@ -58,11 +58,23 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Invoice.cs">
+    <Compile Include="frmFindClients.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Invoice.Designer.cs">
-      <DependentUpon>Invoice.cs</DependentUpon>
+    <Compile Include="frmFindClients.Designer.cs">
+      <DependentUpon>frmFindClients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFindProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFindProduct.Designer.cs">
+      <DependentUpon>frmFindProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInvoice.Designer.cs">
+      <DependentUpon>frmInvoice.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -90,8 +102,14 @@
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Invoice.resx">
-      <DependentUpon>Invoice.cs</DependentUpon>
+    <EmbeddedResource Include="frmFindClients.resx">
+      <DependentUpon>frmFindClients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFindProduct.resx">
+      <DependentUpon>frmFindProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInvoice.resx">
+      <DependentUpon>frmInvoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -107,6 +125,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Usuarios.resx">
       <DependentUpon>Usuarios.cs</DependentUpon>
@@ -137,6 +156,9 @@
       <Project>{2d7ac694-f044-4407-8e04-6c85fc42caa8}</Project>
       <Name>MyPointOfSale.ViewModels</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-report-50.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

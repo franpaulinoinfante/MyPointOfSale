@@ -1,11 +1,4 @@
-﻿using MyPointOfSale.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MyPointOfSale.ViewModels
+﻿namespace MyPointOfSale.ViewModels
 {
     public class UsuarioUpdatedViewModel
     {
