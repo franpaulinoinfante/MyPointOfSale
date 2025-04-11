@@ -73,6 +73,12 @@ namespace MyPointOfSale.WinForm
             this.label2 = new System.Windows.Forms.Label();
             this.lblClientsQuantities = new System.Windows.Forms.Label();
             this.ctrlDateTime = new System.Windows.Forms.Timer(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.clmProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmITBIS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -127,6 +133,7 @@ namespace MyPointOfSale.WinForm
             this.btnLogOut.TabIndex = 25;
             this.btnLogOut.Text = "Cerrar Sección";
             this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // usuarios
             // 
@@ -370,7 +377,8 @@ namespace MyPointOfSale.WinForm
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Segoe UI Semibold", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime.ForeColor = System.Drawing.Color.DimGray;
-            this.lblTime.Location = new System.Drawing.Point(554, 437);
+            this.lblTime.Location = new System.Drawing.Point(563, 423);
+            this.lblTime.Margin = new System.Windows.Forms.Padding(0);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(283, 86);
             this.lblTime.TabIndex = 1;
@@ -391,6 +399,9 @@ namespace MyPointOfSale.WinForm
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -398,13 +409,21 @@ namespace MyPointOfSale.WinForm
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 107);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmProductId,
+            this.clmDescription,
+            this.clmPrice,
+            this.clmITBIS,
+            this.clmCategory});
+            this.dataGridView1.Location = new System.Drawing.Point(7, 138);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(571, 447);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(541, 416);
             this.dataGridView1.TabIndex = 19;
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.tableLayoutPanel1);
             this.panel3.Controls.Add(this.dataGridView1);
             this.panel3.Controls.Add(this.lblDate);
@@ -563,6 +582,47 @@ namespace MyPointOfSale.WinForm
             this.ctrlDateTime.Enabled = true;
             this.ctrlDateTime.Tick += new System.EventHandler(this.ctrlDateTime_Tick);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(212, 119);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(154, 16);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Listado de Productos";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // clmProductId
+            // 
+            this.clmProductId.HeaderText = "Producto ID";
+            this.clmProductId.Name = "clmProductId";
+            this.clmProductId.ReadOnly = true;
+            // 
+            // clmDescription
+            // 
+            this.clmDescription.HeaderText = "Descricpción";
+            this.clmDescription.Name = "clmDescription";
+            this.clmDescription.ReadOnly = true;
+            // 
+            // clmPrice
+            // 
+            this.clmPrice.HeaderText = "Precio";
+            this.clmPrice.Name = "clmPrice";
+            this.clmPrice.ReadOnly = true;
+            // 
+            // clmITBIS
+            // 
+            this.clmITBIS.HeaderText = "ITBIS";
+            this.clmITBIS.Name = "clmITBIS";
+            this.clmITBIS.ReadOnly = true;
+            // 
+            // clmCategory
+            // 
+            this.clmCategory.HeaderText = "Categoria";
+            this.clmCategory.Name = "clmCategory";
+            this.clmCategory.ReadOnly = true;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -644,5 +704,11 @@ namespace MyPointOfSale.WinForm
         private Label label4;
         private Label lblTotalProducts;
         private Timer ctrlDateTime;
+        private Label label3;
+        private DataGridViewTextBoxColumn clmProductId;
+        private DataGridViewTextBoxColumn clmDescription;
+        private DataGridViewTextBoxColumn clmPrice;
+        private DataGridViewTextBoxColumn clmITBIS;
+        private DataGridViewTextBoxColumn clmCategory;
     }
 }

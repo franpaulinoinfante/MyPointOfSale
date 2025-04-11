@@ -20,6 +20,44 @@ namespace MyPointOfSale.WinForm
             _invoiceController = new InvoiceController();
         }
 
+        private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Estas seguro que desea cerrar sección?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        private void usuarios_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmUsuarios usuarios = new frmUsuarios(_userController);
+            usuarios.Show();
+        }
+
+        private void productos_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmProductos productos = new frmProductos(_productController);
+            productos.Show();
+        }
+
+        private void lklInvoice_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmInvoice frmInvoice = new frmInvoice(_invoiceController);
+            frmInvoice.Show();
+            LoadTableLayoutPanel();
+        }
+
+        private void ctrlDateTime_Tick(object sender, EventArgs e)
+        {
+            lblTime.Text = DateTime.Now.ToString("hh:mm:ss");
+            lblDate.Text = DateTime.Now.ToString("dd MMM yyy");
+        }
+
         private void Dashboard_Load(object sender, EventArgs e)
         {
             LoadUserData();
@@ -34,7 +72,7 @@ namespace MyPointOfSale.WinForm
             LoadSalesTotales();
             LoadTotalProducts();
             LoadTotalNCFUtilizados();
-            
+
         }
 
         private void LoadClientsTotals()
@@ -91,7 +129,14 @@ namespace MyPointOfSale.WinForm
 
         private void LoadProducts()
         {
-            dataGridView1.DataSource = _productController.GetProducts();
+            var products = _productController.GetProducts();
+            if (products.Count > 0)
+            {
+                foreach (var product in products)
+                {
+                    dataGridView1.Rows.Add(product.ProductId.ToString(), product.Description, product.Price.ToString("C2"), product.ITBIS.ToString("C2"), product.Category);
+                }
+            }
         }
 
         private void LoadUserData()
@@ -99,44 +144,6 @@ namespace MyPointOfSale.WinForm
             lblUserName.Text = $"{UserLoginCache.FirstName} {UserLoginCache.LastName}";
             lblPosition.Text = UserLoginCache.Position;
             lblUserEmail.Text = UserLoginCache.Email;
-        }
-
-        private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void btnLogOut_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Estas seguro que desea cerrar sección?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                this.Close();
-            }
-        }
-
-        private void usuarios_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            frmUsuarios usuarios = new frmUsuarios(_userController);
-            usuarios.Show();
-        }
-
-        private void productos_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            frmProductos productos = new frmProductos(_productController);
-            productos.Show();
-        }
-
-        private void lklInvoice_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            frmInvoice frmInvoice = new frmInvoice(_invoiceController);
-            frmInvoice.Show();
-            LoadTableLayoutPanel();
-        }
-
-        private void ctrlDateTime_Tick(object sender, EventArgs e)
-        {
-            lblTime.Text = DateTime.Now.ToString("hh:mm:ss");
-            lblDate.Text = DateTime.Now.ToString("dddd mmmm yyy");
         }
     }
 

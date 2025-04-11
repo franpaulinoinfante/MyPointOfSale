@@ -39,7 +39,6 @@ namespace MyPointOfSale.Controllers
 
         public IReadOnlyList<ProductViewModel> GetProducts()
         {
-
             List<ProductViewModel> productViewModels = new List<ProductViewModel>();
             foreach (Product product in productDao.GetProducts())
             {

@@ -127,7 +127,7 @@
             this.txtClient.Location = new System.Drawing.Point(348, 12);
             this.txtClient.Name = "txtClient";
             this.txtClient.Size = new System.Drawing.Size(468, 29);
-            this.txtClient.TabIndex = 2;
+            this.txtClient.TabIndex = 1;
             // 
             // btnFindClient
             // 
@@ -157,7 +157,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 404);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(948, 88);
-            this.panel1.TabIndex = 4;
+            this.panel1.TabIndex = 6;
             // 
             // btnCancel
             // 
@@ -395,7 +395,7 @@
             this.txtProductId.Location = new System.Drawing.Point(217, 86);
             this.txtProductId.Name = "txtProductId";
             this.txtProductId.Size = new System.Drawing.Size(89, 29);
-            this.txtProductId.TabIndex = 12;
+            this.txtProductId.TabIndex = 3;
             // 
             // label8
             // 
